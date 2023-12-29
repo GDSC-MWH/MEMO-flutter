@@ -13,89 +13,93 @@ class _EmergencyState extends State<Emergency> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'My Contacts',
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
+    return MaterialApp(
+      theme: ThemeData(
+          scaffoldBackgroundColor: const Color.fromRGBO(255, 243, 219, 100)),
+      home: Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          title: const Center(
+            child: Text(
+              'My Contacts',
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return Dialog(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Text(
-                            '연락처 추가',
-                            style: TextStyle(
-                              fontSize: 20.0,
-                            ),
-                          ),
-                          TextField(
-                            controller: nameController,
-                            decoration: const InputDecoration(
-                              labelText: '이름',
-                            ),
-                          ),
-                          TextField(
-                            controller: phoneNumberController,
-                            decoration: const InputDecoration(
-                              labelText: '전화번호',
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                'Name: ${nameController.text}, Phone: ${phoneNumberController.text}';
-                              });
-                              Navigator.pop(context);
-                            },
-                            child: const Text('추가'),
-                          ),
-                        ],
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 140.0, top: 0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Text(
+                              '연락처 추가',
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            TextField(
+                              controller: nameController,
+                              decoration: const InputDecoration(
+                                labelText: '이름',
+                              ),
+                            ),
+                            TextField(
+                              controller: phoneNumberController,
+                              decoration: const InputDecoration(
+                                labelText: '전화번호',
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  'Name: ${nameController.text}, Phone: ${phoneNumberController.text}';
+                                });
+                                Navigator.pop(context);
+                              },
+                              child: const Text('추가'),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
             ),
-            const SizedBox(
-              height: 50,
-            ),
-            _buildButton2('아내', '010-0000-0000', () {}),
-            _buildButton2('아들', '010-0000-0000', () {}),
           ],
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 140.0, top: 0),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              _buildButton2('아내', '010-0000-0000', () {}),
+              _buildButton2('아들', '010-0000-0000', () {}),
+            ],
+          ),
         ),
       ),
     );

@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const People(),
-    const Mypage(),
+    const MyPage(),
   ];
 
   void _onItemTapped(int index) {

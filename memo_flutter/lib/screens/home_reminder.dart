@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cell_calendar/cell_calendar.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 
 class Home_Reminder extends StatefulWidget {
   const Home_Reminder({Key? key}) : super(key: key);
@@ -36,6 +37,7 @@ class _Home_ReminderState extends State<Home_Reminder> {
   }
 
   _showAddDialog(DateTime date) {
+    String formattedDate = DateFormat('yyyy-MM-dd').format(date);
     String diary = '';
     showDialog(
       context: context,

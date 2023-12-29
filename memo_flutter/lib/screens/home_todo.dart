@@ -11,7 +11,6 @@ class Home_Todo extends StatefulWidget {
 class _Home_TodoState extends State<Home_Todo> {
   late List<Todo> _todos;
   late TextEditingController _textController;
-  DateTime? _selectedDate;
 
   @override
   void initState() {
@@ -65,7 +64,7 @@ class _Home_TodoState extends State<Home_Todo> {
         _todos.add(
           Todo(
             Title: title,
-            from: _selectedDate!,
+            from: DateTime.now(),
             background: const Color(0xFF0F8644),
             isAllDay: false,
           ),

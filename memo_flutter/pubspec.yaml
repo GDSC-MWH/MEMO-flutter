@@ -8,8 +8,17 @@ environment:
 
 dependencies:
   cell_calendar: ^0.8.0
+  dio: ^5.4.0
+  firebase_messaging: ^14.7.9
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^16.3.0
+  get: ^4.6.6
+  http: ^1.1.2
+  image_picker: ^1.0.5
+  intl: ^0.18.1
+  syncfusion_flutter_calendar: ^24.1.43
+  table_calendar: ^3.0.9
 
 dev_dependencies:
   flutter_test:
@@ -18,3 +27,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/Post-it-4suffix.png

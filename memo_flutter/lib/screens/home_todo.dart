@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Home_Todo extends StatelessWidget {
-  const Home_Todo({super.key});
+class HomeTodo extends StatelessWidget {
+  const HomeTodo({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -43,8 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
         body: _selectedIndex == 0
             ? const TabBarView(
                 children: [
-                  Home_Reminder(),
-                  Home_Todo(),
+                  HomeReminder(),
+                  HomeTodo(),
                 ],
               )
             : _widgetOptions.elementAt(_selectedIndex),

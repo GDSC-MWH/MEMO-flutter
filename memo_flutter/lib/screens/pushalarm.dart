@@ -26,9 +26,7 @@ class _PushAlarmState extends State<PushAlarm> {
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () {
-              print('Add button pressed!');
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -76,6 +74,38 @@ class _PushAlarmState extends State<PushAlarm> {
                 ),
               ],
             ),
+            Column(
+              children: [
+                Expanded(
+                  child: Container(
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.white,
+                        side: const BorderSide(color: Colors.black, width: 1.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      child: const Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '푸시 알람 추가하기',
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

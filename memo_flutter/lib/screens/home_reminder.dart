@@ -1,10 +1,8 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:cell_calendar/cell_calendar.dart';
 
-class Home_Reminder extends StatelessWidget {
-  const Home_Reminder({super.key});
+class HomeReminder extends StatelessWidget {
+  const HomeReminder({super.key});
 
   @override
   Widget build(BuildContext context) {

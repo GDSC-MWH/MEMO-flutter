@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:memo_flutter/screens/address.dart';
 import 'package:memo_flutter/screens/changeprofile.dart';
 import 'package:memo_flutter/screens/emergency.dart';
+import 'package:memo_flutter/screens/homescreen.dart';
 import 'package:memo_flutter/screens/pushalarm.dart';
 
 class MyPage extends StatefulWidget {
-  const MyPage({
-    super.key,
-  });
+  const MyPage({Key? key}) : super(key: key);
 
   @override
   _MyPageState createState() => _MyPageState();
@@ -21,7 +20,7 @@ class _MyPageState extends State<MyPage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             const CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage("/assets/default_profile.png"),
@@ -56,6 +55,7 @@ class _MyPageState extends State<MyPage> {
                 MaterialPageRoute(builder: (context) => const Emergency()),
               );
             }),
+            const HomeScreen(),
           ],
         ),
       ),
@@ -69,12 +69,13 @@ class _MyPageState extends State<MyPage> {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-            foregroundColor: Colors.black,
-            backgroundColor: Colors.white,
-            side: const BorderSide(color: Colors.black, width: 1.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            )),
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.white,
+          side: const BorderSide(color: Colors.black, width: 1.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
           child: Align(

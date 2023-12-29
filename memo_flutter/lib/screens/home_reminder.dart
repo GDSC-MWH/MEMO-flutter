@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cell_calendar/cell_calendar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:dio/dio.dart';
 
 class Home_Reminder extends StatefulWidget {
   const Home_Reminder({Key? key}) : super(key: key);
@@ -39,6 +40,7 @@ class _Home_ReminderState extends State<Home_Reminder> {
   _showAddDialog(DateTime date) {
     String formattedDate = DateFormat('yyyy-MM-dd').format(date);
     String diary = '';
+    List<MultipartFile> files = [];
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -55,11 +57,14 @@ class _Home_ReminderState extends State<Home_Reminder> {
               onPressed: () async {
                 // Use image_picker to pick an image from the gallery
                 final imagePicker = ImagePicker();
-                final photo =
+                final pickedFile =
                     await imagePicker.pickImage(source: ImageSource.gallery);
-                if (photo != null) {
-                  // TODO: Upload the picked image to Firebase
-                  // You can use Firebase Storage for this purpose
+                if (pickedFile != null) {
+                  List<int> imageBytes = await pickedFile.readAsBytes();
+                  String fileName = 'image${files.length + 1}.jpg';
+                  MultipartFile imageFile =
+                      MultipartFile.fromBytes(imageBytes, filename: fileName);
+                  files.add(imageFile);
                 }
               },
               child: const Text('Add Image'),

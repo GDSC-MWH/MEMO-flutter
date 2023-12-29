@@ -5,12 +5,8 @@ import 'package:memo_flutter/screens/emergency.dart';
 import 'package:memo_flutter/screens/pushalarm.dart';
 
 class MyPage extends StatefulWidget {
-  // final String name, profile;
-
   const MyPage({
     super.key,
-    // required this.name,
-    // required this.profile,
   });
 
   @override

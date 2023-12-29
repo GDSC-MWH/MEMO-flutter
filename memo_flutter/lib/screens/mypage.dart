@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:memo_flutter/screens/Mypage/address.dart';
-import 'package:memo_flutter/screens/Mypage/changeProfile.dart';
-import 'package:memo_flutter/screens/Mypage/emergency.dart';
-import 'package:memo_flutter/screens/Mypage/pushalarm.dart';
+import 'package:memo_flutter/screens/address.dart';
+import 'package:memo_flutter/screens/changeprofile.dart';
+import 'package:memo_flutter/screens/emergency.dart';
+import 'package:memo_flutter/screens/pushalarm.dart';
 
 class MyPage extends StatefulWidget {
   // final String name, profile;

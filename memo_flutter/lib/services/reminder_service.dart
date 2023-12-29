@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
-import 'package:image_picker/image_picker.dart';
 
 class ReminderController {
   late String formattedDate;
@@ -12,7 +11,8 @@ class ReminderController {
   }
 
   Future<void> fetchData() async {
-    final response = await http.get(Uri.parse('https:///api/records/save'));
+    final response =
+        await http.get(Uri.parse('https://api/records/load/{date}'));
 
     if (response.statusCode == 200) {
       print('Response data: ${response.body}');
@@ -23,7 +23,7 @@ class ReminderController {
 
   Future<void> postDataToServer() async {
     final response = await http.post(
-      Uri.parse('https://api.example.com/post-data'),
+      Uri.parse('https://api/records/save'),
       body: {
         'date': formattedDate,
         'files': files, // 선택된 사진의 경로를 전송하거나 필요에 따라 수정

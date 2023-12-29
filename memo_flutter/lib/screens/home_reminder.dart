@@ -74,18 +74,33 @@ class _Home_ReminderState extends State<Home_Reminder> {
         actions: <Widget>[
           TextButton(
             child: const Text("Save"),
-            onPressed: () {
+            onPressed: () async {
               if (_textController.text.isEmpty) return;
+              diary = _textController.text;
+              FormData formData = FormData.fromMap({
+                'text': diary,
+                'image': files,
+              });
+              var response = await Dio().post(
+                'your_server_post_endpoint',
+                data: formData,
+              );
+              if (response.statusCode == 200) {
+              } else {
+                print('Failed');
+              }
               setState(() {
                 if (_events[date] != null) {
                   _events[date]!.add({
-                    'text': _textController.text,
+                    'text': diary,
+                    'images': files,
                     // Add other properties as needed
                   });
                 } else {
                   _events[date] = [
                     {
-                      'text': _textController.text,
+                      'text': diary,
+                      'images': files,
                       // Add other properties as needed
                     }
                   ];
